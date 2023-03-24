@@ -27,7 +27,7 @@ const ResultCard = ({ movie, clearSearch }) => {
     movie["rating"] = grade
     
 
-    const response = await fetch("http://localhost:5000/api/movies", {
+    const response = await fetch("/api/movies", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${user.token}`,

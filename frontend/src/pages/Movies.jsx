@@ -17,7 +17,7 @@ const Movies = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       console.log(user.token)
-      const response = await fetch("http://localhost:5000/api/movies", {
+      const response = await fetch("/api/movies", {
         headers: {
           "Authorization": `Bearer ${user.token}`
         }
