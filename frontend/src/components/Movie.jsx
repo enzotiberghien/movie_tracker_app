@@ -21,7 +21,7 @@ const Movie = ({ movie }) => {
     const found = watched.find(({title}) => title === movie.title)
     console.log(found)
 
-    const response = await fetch(`http://localhost:5000/api/movies/${movie.id}`, {
+    const response = await fetch(`/api/movies/${movie.id}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${user.token}`,
