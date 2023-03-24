@@ -16,7 +16,7 @@ const Register = () => {
     const formData = new FormData(e.target);
     const userData = Object.fromEntries(formData);
 
-    const response = await axios.post('http://localhost:5000/api/users', userData)
+    const response = await axios.post('/api/users', userData)
 
     if (response.data) {
       navigate('/login');
