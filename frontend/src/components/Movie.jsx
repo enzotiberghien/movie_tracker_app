@@ -39,7 +39,7 @@ const Movie = ({ movie }) => {
 
   return (
     <div>
-      <div className='movie'>
+      <div className='movie' onClick={toggleModal}>
         <img src={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} alt={movie.path} />
         <div className='movie-brand'>
           <div className='movie-title'>{movie.title}</div>
