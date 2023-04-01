@@ -16,12 +16,21 @@ const Register = () => {
     const formData = new FormData(e.target);
     const userData = Object.fromEntries(formData);
 
-    const response = await axios.post('/api/users', userData)
+    console.log(userData)
+    if (userData["password"] !== userData["repeat-password"]) {
+      window.alert("Registration failed. Passwords not matching.");
+      return
+    }
 
-    if (response.data) {
-      navigate('/login');
-      
+    try {
+      const response = await axios.post('/api/users', userData)
 
+      if (response.data) {
+        navigate('/login');
+      }
+    } catch (error) {
+      console.error(error)
+      window.alert("Registration failed. Username of email already taken.");
     }
   }
 
@@ -31,7 +40,7 @@ const Register = () => {
         <h1>Register</h1>
         <form onSubmit={register} className="col">
           <input type="text" id="username" name="username" placeholder="USERNAME" required autoFocus />
-          <input type="text" id="email" name="email" placeholder="EMAIL" required  />
+          <input type="text" id="email" name="email" placeholder="EMAIL" required />
           <input type="password" id="password" name="password" placeholder="PASSWORD" required />
           <input type="password" id="repeat-password" name="repeat-password" placeholder="COMFIRM PASSWORD" required />
           <button type="submit">Register</button>

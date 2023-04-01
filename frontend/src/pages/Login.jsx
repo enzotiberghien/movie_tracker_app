@@ -17,13 +17,15 @@ const Login = () => {
     const formData = new FormData(e.target);
     const userData = Object.fromEntries(formData);
 
-    const response = await axios.post('/api/users/login', userData)
+    try {
+      const response = await axios.post('/api/users/login', userData)
 
-    if (response.data) {
       localStorage.setItem("user", JSON.stringify(response.data));
       setUser(response.data)
       setWatched([])
       navigate('/movies');
+    } catch (error) {
+      window.alert("Login failed. Please check your credentials and try again.");
     }
   }
 
