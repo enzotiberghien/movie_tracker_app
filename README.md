@@ -1,7 +1,6 @@
 # movie_tracker_app
 
-
-https://movietrackerapp-production.up.railway.app
+https://movie-tracker-app.onrender.com/
 
 Test Account:
 email: test@gmail.com
