@@ -19,7 +19,3 @@ Create a new account or use the test account:
 
 - **Email:** test@gmail.com
 - **Password:** test1234
-
-## License
-
-This project is licensed under the MIT License.
