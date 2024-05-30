@@ -33,7 +33,7 @@ const Header = () => {
             <a className="links" href="/top">Top</a>
           </li>
           <li>
-            <a onClick={logout} className="links" href="">{user.username} <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" /></a>
+            <a onClick={logout} className="links" href="#">{user.username} <FontAwesomeIcon icon="fa-solid fa-right-from-bracket" /></a>
           </li>
         </ul>
       </nav>
