@@ -6,7 +6,6 @@ const asyncHandler = require("express-async-handler")
 // @desc  Get movies
 // @route GET/api/movies
 const getMovies = asyncHandler(async (req, res) => {
-  console.log("userId:", req.user.id)
   const movies = await Movie.find({ user: req.user.id })
 
   res.json(movies)
@@ -28,7 +27,6 @@ const setMovie = asyncHandler(async (req, res) => {
 //  @route PUT/api/movies/:id
 const updateMovie = asyncHandler(async (req, res) => {
   const movie = await Movie.findById(req.params.id)
-  console.log(req.params.id)
   if (!movie) {
     res.status(400)
     throw new Error("Movie not found")

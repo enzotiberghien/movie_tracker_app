@@ -23,7 +23,6 @@ const ResultCard = ({ movie, clearSearch }) => {
     setModal(false);
     clearSearch()
 
-    console.log(movie)
     movie["rating"] = grade
     
 
@@ -42,7 +41,6 @@ const ResultCard = ({ movie, clearSearch }) => {
 
     const data = await response.json();
     if (response.ok) {
-      console.log(data);
     } else {
       console.error(data.message);
     }

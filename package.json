@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon backend/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "client": "npm start --prefix frontend"
+    "client": "npm start --prefix frontend",
+    "build": "cd frontend/ && npm run build",
+    "setup": "npm i && cd frontend/ && npm i"
   },
   "author": "Enzo Tiberghien",
   "license": "MIT",

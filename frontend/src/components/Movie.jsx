@@ -19,7 +19,6 @@ const Movie = ({ movie }) => {
     setModal(false);
 
     const found = watched.find(({title}) => title === movie.title)
-    console.log(found)
 
     const response = await fetch(`/api/movies/${movie.id}`, {
       method: "DELETE",
@@ -31,7 +30,6 @@ const Movie = ({ movie }) => {
 
     const data = await response.json();
     if (response.ok) {
-      console.log(data);
     } else {
       console.error(data.message);
     }
