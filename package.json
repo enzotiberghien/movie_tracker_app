@@ -9,7 +9,7 @@
     "server": "nodemon backend/server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "npm start --prefix frontend",
-    "build": "cd frontend/ && npm run build",
+    "build": "cd frontend/ && npm run build && npm install -g serve && serve -s build",
     "setup": "npm i && cd frontend/ && npm i"
   },
   "author": "Enzo Tiberghien",
